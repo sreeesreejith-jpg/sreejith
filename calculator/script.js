@@ -49,11 +49,25 @@ function applyPercentage() {
     const current = parseFloat(currentOperand);
     const prev = parseFloat(previousOperand);
 
-    if (!isNaN(prev) && (operation === '+' || operation === '-')) {
-        // Smart Percentage: 100 + 10% becomes 100 + 10
-        currentOperand = (prev * (current / 100)).toString();
+    if (!isNaN(prev)) {
+        if (operation === '+' || operation === '-') {
+            // Standard Mobile Calc Logic: 100 + 10% = 110
+            const percentageValue = prev * (current / 100);
+            if (operation === '+') {
+                currentOperand = (prev + percentageValue).toString();
+            } else {
+                currentOperand = (prev - percentageValue).toString();
+            }
+            // Clear operation as it's been completed
+            operation = undefined;
+            previousOperand = '';
+        } else if (operation === '*' || operation === '/') {
+            // 100 * 10% = 10
+            currentOperand = (current / 100).toString();
+            calculate();
+        }
     } else {
-        // Regular percentage: 100 * 10% becomes 100 * 0.1
+        // Just turn 50 into 0.5
         currentOperand = (current / 100).toString();
     }
     updateDisplay();
