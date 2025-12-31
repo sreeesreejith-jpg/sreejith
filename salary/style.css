@@ -88,16 +88,15 @@ header {
     text-align: center;
 }
 
-.net-salary-card {
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent);
+/* Main Prominent Card */
+.main-summary {
+    grid-column: 1;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent);
 }
 
-.net-salary-card .value {
+.main-summary .value {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #10b981;
-    text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
 }
 
 .summary-details {
@@ -121,10 +120,17 @@ header {
 
 .gross-card .value {
     color: #3b82f6;
+    /* Blue for Gross */
 }
 
 .deduct-card .value {
     color: #ef4444;
+    /* Red for Deduct */
+}
+
+.net-salary-card .value {
+    color: #10b981;
+    /* Green for Net */
 }
 
 /* Grid Layout */
