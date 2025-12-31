@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sree-Apps | Calculator</title>
-    <meta name="description" content="A simple, elegant, and powerful calculator for your daily needs.">
+    <meta name="description" content="A powerful and flexible calculator with brackets and smart percentage logic.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
                 <a href="../index.html" class="home-icon" title="Go Home">🏠</a>
                 <div class="header-text">
                     <h1>Calculator</h1>
-                    <p>Precise. Simple. Elegant.</p>
+                    <p>Precise. Simple. Flexible.</p>
                 </div>
             </div>
         </header>
@@ -30,33 +30,42 @@
         <main>
             <div class="calculator">
                 <div class="display">
-                    <div id="previous-op" class="previous-op"></div>
-                    <div id="current-op" class="current-op">0</div>
+                    <div id="expression" class="previous-op"></div>
+                    <div id="current-val" class="current-op">0</div>
                 </div>
                 <div class="buttons">
+                    <!-- Row 1 -->
                     <button class="btn btn-utility" onclick="clearDisplay()">AC</button>
-                    <button class="btn btn-utility" onclick="deleteLast()">DEL</button>
-                    <button class="btn btn-utility" onclick="applyPercentage()">%</button>
-                    <button class="btn btn-operator" onclick="appendOperator('/')">÷</button>
+                    <button class="btn btn-utility" onclick="append('(')">(</button>
+                    <button class="btn btn-utility" onclick="append(')')">)</button>
+                    <button class="btn btn-operator" onclick="append('÷')">÷</button>
 
-                    <button class="btn" onclick="appendNumber('7')">7</button>
-                    <button class="btn" onclick="appendNumber('8')">8</button>
-                    <button class="btn" onclick="appendNumber('9')">9</button>
-                    <button class="btn btn-operator" onclick="appendOperator('*')">×</button>
+                    <!-- Row 2 -->
+                    <button class="btn" onclick="append('7')">7</button>
+                    <button class="btn" onclick="append('8')">8</button>
+                    <button class="btn" onclick="append('9')">9</button>
+                    <button class="btn btn-operator" onclick="append('×')">×</button>
 
-                    <button class="btn" onclick="appendNumber('4')">4</button>
-                    <button class="btn" onclick="appendNumber('5')">5</button>
-                    <button class="btn" onclick="appendNumber('6')">6</button>
-                    <button class="btn btn-operator" onclick="appendOperator('-')">-</button>
+                    <!-- Row 3 -->
+                    <button class="btn" onclick="append('4')">4</button>
+                    <button class="btn" onclick="append('5')">5</button>
+                    <button class="btn" onclick="append('6')">6</button>
+                    <button class="btn btn-operator" onclick="append('-')">-</button>
 
-                    <button class="btn" onclick="appendNumber('1')">1</button>
-                    <button class="btn" onclick="appendNumber('2')">2</button>
-                    <button class="btn" onclick="appendNumber('3')">3</button>
-                    <button class="btn btn-operator" onclick="appendOperator('+')">+</button>
+                    <!-- Row 4 -->
+                    <button class="btn" onclick="append('1')">1</button>
+                    <button class="btn" onclick="append('2')">2</button>
+                    <button class="btn" onclick="append('3')">3</button>
+                    <button class="btn btn-operator" onclick="append('+')">+</button>
 
-                    <button class="btn btn-zero" onclick="appendNumber('0')">0</button>
-                    <button class="btn" onclick="appendNumber('.')">.</button>
-                    <button class="btn btn-equals" onclick="calculate()">=</button>
+                    <!-- Row 5 -->
+                    <button class="btn" onclick="append('0')">0</button>
+                    <button class="btn" onclick="append('.')">.</button>
+                    <button class="btn btn-operator" onclick="append('%')">%</button>
+                    <button class="btn btn-utility" onclick="backspace()">DEL</button>
+
+                    <!-- Final Row -->
+                    <button class="btn btn-equals btn-wide" onclick="calculate()">=</button>
                 </div>
             </div>
         </main>
