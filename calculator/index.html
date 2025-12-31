@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sree-Apps | Calculator</title>
+    <meta name="description" content="A simple, elegant, and powerful calculator for your daily needs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="../icon-192.png">
+    <meta name="theme-color" content="#6366f1">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <a href="../index.html" class="home-icon" title="Go Home">🏠</a>
+                <div class="header-text">
+                    <h1>Calculator</h1>
+                    <p>Precise. Simple. Elegant.</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="calculator">
+                <div class="display">
+                    <div id="previous-op" class="previous-op"></div>
+                    <div id="current-op" class="current-op">0</div>
+                </div>
+                <div class="buttons">
+                    <button class="btn btn-utility" onclick="clearDisplay()">AC</button>
+                    <button class="btn btn-utility" onclick="deleteLast()">DEL</button>
+                    <button class="btn btn-utility" onclick="appendOperator('%')">%</button>
+                    <button class="btn btn-operator" onclick="appendOperator('/')">÷</button>
+
+                    <button class="btn" onclick="appendNumber('7')">7</button>
+                    <button class="btn" onclick="appendNumber('8')">8</button>
+                    <button class="btn" onclick="appendNumber('9')">9</button>
+                    <button class="btn btn-operator" onclick="appendOperator('*')">×</button>
+
+                    <button class="btn" onclick="appendNumber('4')">4</button>
+                    <button class="btn" onclick="appendNumber('5')">5</button>
+                    <button class="btn" onclick="appendNumber('6')">6</button>
+                    <button class="btn btn-operator" onclick="appendOperator('-')">-</button>
+
+                    <button class="btn" onclick="appendNumber('1')">1</button>
+                    <button class="btn" onclick="appendNumber('2')">2</button>
+                    <button class="btn" onclick="appendNumber('3')">3</button>
+                    <button class="btn btn-operator" onclick="appendOperator('+')">+</button>
+
+                    <button class="btn btn-zero" onclick="appendNumber('0')">0</button>
+                    <button class="btn" onclick="appendNumber('.')">.</button>
+                    <button class="btn btn-equals" onclick="calculate()">=</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            Created by Sreejith
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch(err => console.log('SW fail', err));
+            });
+        }
+    </script>
+</body>
+
+</html>

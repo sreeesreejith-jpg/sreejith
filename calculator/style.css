@@ -1,0 +1,191 @@
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --display-bg: #0f172a;
+    --btn-bg: #334155;
+    --btn-hover: #475569;
+    --operator-bg: #6366f1;
+    --utility-bg: #475569;
+    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --font-family: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Header */
+header {
+    margin-bottom: 1.5rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.home-icon {
+    text-decoration: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    filter: grayscale(1);
+    transition: filter 0.3s;
+}
+
+.home-icon:hover {
+    filter: grayscale(0);
+}
+
+.header-text h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.header-text p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Calculator Card */
+.calculator {
+    background: var(--card-bg);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.display {
+    background: var(--display-bg);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: right;
+    margin-bottom: 1.5rem;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    word-break: break-all;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.previous-op {
+    font-size: 1rem;
+    color: var(--text-muted);
+    min-height: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.current-op {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+.btn {
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 0.75rem;
+    background: var(--btn-bg);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-operator {
+    background: var(--operator-bg);
+}
+
+.btn-operator:hover {
+    background: var(--primary-hover);
+}
+
+.btn-utility {
+    background: var(--utility-bg);
+    color: #ffdce0;
+    /* Slight red tint for AC/DEL */
+}
+
+.btn-utility:nth-child(1),
+.btn-utility:nth-child(2) {
+    color: #fb7185;
+}
+
+.btn-zero {
+    grid-column: span 2;
+    aspect-ratio: initial;
+    height: 100%;
+}
+
+.btn-equals {
+    background: var(--accent-gradient);
+    font-weight: 800;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 1.5rem 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 380px) {
+    .buttons {
+        gap: 0.5rem;
+    }
+
+    .btn {
+        font-size: 1.1rem;
+    }
+}
