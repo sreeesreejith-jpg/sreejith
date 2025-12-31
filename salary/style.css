@@ -390,7 +390,8 @@ input::placeholder {
     }
 
     .container {
-        padding: 0;
+        max-width: 100%;
+        padding: 0.5rem;
     }
 }
 
@@ -400,13 +401,56 @@ input::placeholder {
     }
 
     .input-with-result {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.25rem;
+        display: contents;
+        /* Maintain grid placement */
+    }
+
+    .earnings .input-field {
+        grid-template-columns: 85px 65px 1fr;
+        gap: 0.4rem;
+        padding: 0.4rem 0.4rem;
+    }
+
+    .deductions .input-field {
+        grid-template-columns: 95px 1fr;
+        gap: 0.4rem;
+        padding: 0.4rem 0.4rem;
+    }
+
+    .input-group {
+        padding: 0.4rem;
+    }
+
+    /* Hide dot leaders on mobile to save space */
+    .deductions .input-field::before {
+        display: none;
+    }
+
+    .input-field label {
+        font-size: 0.72rem;
+    }
+
+    .input-field label::before {
+        margin-right: 4px;
+    }
+
+    input {
+        padding: 0.4rem 0.4rem;
+        font-size: 0.8rem;
+        width: 100% !important;
     }
 
     .calculated-value {
-        text-align: left;
-        padding-left: 0.5rem;
+        font-size: 0.8rem;
+        min-width: 55px;
+        text-align: right;
+    }
+
+    .total-val {
+        font-size: 0.95rem;
+    }
+
+    .highlight-net .total-val {
+        font-size: 1.05rem;
     }
 }
