@@ -1,0 +1,45 @@
+{
+    "id": "com.sree.dcrg.pwa",
+    "name": "Kerala Pension & DCRG Calculator",
+    "short_name": "Pension Calc",
+    "description": "Professional calculator for Kerala Government Pension and DCRG benefits. Includes commutation and lump sum calculations.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#2563eb",
+    "orientation": "portrait",
+    "categories": [
+        "utilities",
+        "finance"
+    ],
+    "icons": [
+        {
+            "src": "app-icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "app-icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "screenshot.png",
+            "sizes": "1280x1280",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "App Dashboard"
+        },
+        {
+            "src": "screenshot.png",
+            "sizes": "1280x1280",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "App Dashboard"
+        }
+    ]
+}
