@@ -1,0 +1,412 @@
+:root {
+    --primary: #10b981;
+    --primary-hover: #059669;
+    --bg-color: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --earnings-bg: rgba(16, 185, 129, 0.1);
+    --deductions-bg: rgba(239, 68, 68, 0.1);
+    --accent-gradient: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    --sec-gradient: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+    --font-family: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    background-image:
+        radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.15) 0, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.15) 0, transparent 50%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 80%;
+    /* Set to 80% as requested */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Header */
+header {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.home-icon {
+    position: absolute;
+    left: 0;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.home-icon:hover {
+    transform: scale(1.2);
+}
+
+.header-text h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.header-text p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Summary Cards */
+.summary-cards {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.summary-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.net-salary-card {
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent);
+}
+
+.net-salary-card .value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #10b981;
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.summary-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.summary-card .label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.summary-card .value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.gross-card .value {
+    color: #3b82f6;
+}
+
+.deduct-card .value {
+    color: #ef4444;
+}
+
+/* Grid Layout */
+.salary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.salary-section {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.section-header {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.earnings-header {
+    background: var(--accent-gradient);
+}
+
+.deductions-header {
+    background: var(--sec-gradient);
+}
+
+.section-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+}
+
+.input-group {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-field {
+    display: grid;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.75rem;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.input-field:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.earnings .input-field {
+    grid-template-columns: 120px 85px 1fr;
+    /* Label, InputBox, ResultValue */
+}
+
+.deductions .input-field {
+    grid-template-columns: 120px 1fr;
+    /* Label, InputBox */
+}
+
+/* Decorative Dot Leader for Deductions */
+.deductions .input-field::before {
+    content: "....................................................................................................";
+    position: absolute;
+    left: 125px;
+    right: 115px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.1);
+    font-family: monospace;
+    font-size: 1rem;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.input-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+}
+
+.input-field label::before {
+    content: "■";
+    font-size: 0.5rem;
+    margin-right: 10px;
+    opacity: 0.6;
+}
+
+.earnings label::before {
+    color: #10b981;
+}
+
+.deductions label::before {
+    color: #ef4444;
+}
+
+.input-field:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.input-with-result {
+    display: contents;
+}
+
+/* Specific column behaviors */
+.earnings input {
+    width: 100% !important;
+}
+
+#basic-pay {
+    max-width: 85px;
+}
+
+.deductions input {
+    width: 100% !important;
+    max-width: 100px;
+    justify-self: end;
+    position: relative;
+    z-index: 1;
+    /* Stay above dots */
+}
+
+input {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    color: white;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    outline: none;
+    transition: all 0.2s;
+    text-align: right;
+}
+
+input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.calculated-value {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 700;
+    min-width: 80px;
+    text-align: right;
+}
+
+.deductions .calculated-value {
+    color: #ef4444;
+}
+
+/* Section Summary Styles */
+.section-summary {
+    padding: 0.75rem 0.75rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gross-summary-row {
+    border-bottom: 3px solid #10b981;
+}
+
+.deduction-summary-row {
+    border-bottom: 3px solid #ef4444;
+}
+
+.section-summary .input-field {
+    padding: 0.2rem 0;
+}
+
+.section-summary label {
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.total-val {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.gross-summary-row .total-val {
+    color: #10b981;
+}
+
+.deduction-summary-row .total-val {
+    color: #ef4444;
+}
+
+.highlight-net {
+    margin-top: 0.25rem;
+    padding-top: 0.5rem !important;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.highlight-net label {
+    color: #3b82f6;
+}
+
+.highlight-net .total-val {
+    color: #3b82f6;
+    font-size: 1.25rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* Tooltip/Helper */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .salary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .net-salary-card .value {
+        font-size: 2.25rem;
+    }
+
+    .container {
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .summary-details {
+        grid-template-columns: 1fr;
+    }
+
+    .input-with-result {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .calculated-value {
+        text-align: left;
+        padding-left: 0.5rem;
+    }
+}
