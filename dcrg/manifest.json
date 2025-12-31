@@ -14,13 +14,13 @@
     ],
     "icons": [
         {
-            "src": "app-icon.png",
-            "sizes": "512x512",
-            "type": "image/png",
+            "src": "icon-1024.jpg",
+            "sizes": "1024x1024",
+            "type": "image/jpeg",
             "purpose": "any"
         },
         {
-            "src": "app-icon.png",
+            "src": "icon-512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable"
