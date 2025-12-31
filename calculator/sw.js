@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calc-v3'; // Bumped to v3
+const CACHE_NAME = 'calc-v4'; // Bumped to v4 for UI responsiveness fix
 const ASSETS = [
     './',
     './index.html',
