@@ -1,0 +1,35 @@
+{
+    "name": "Sree-Apps",
+    "short_name": "Sree-Apps",
+    "id": "com.sree.apps.portal",
+    "description": "Your centralized suite of professional financial and utility tools.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#4f46e5",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "emi/icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "dcrg/screenshot.png",
+            "sizes": "1280x1280",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Apps Hub"
+        },
+        {
+            "src": "dcrg/screenshot.png",
+            "sizes": "1280x1280",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Apps Hub Mobile"
+        }
+    ]
+}
