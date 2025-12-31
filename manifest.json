@@ -1,35 +1,35 @@
 {
-    "name": "Sree-Apps",
-    "short_name": "Sree-Apps",
-    "id": "com.sree.apps.portal",
-    "description": "Your centralized suite of professional financial and utility tools.",
+    "name": "SIP Calculator",
+    "short_name": "SIP Calc",
+    "id": "com.sree.sip.calc",
+    "description": "Calculate returns on your Systematic Investment Plan (SIP) instantly.",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#0f172a",
-    "theme_color": "#4f46e5",
+    "theme_color": "#10b981",
     "orientation": "portrait",
     "icons": [
         {
-            "src": "emi/icon.png",
+            "src": "icon.png",
             "sizes": "512x512",
-            "type": "image/png",
+            "type": "image/jpeg",
             "purpose": "any maskable"
         }
     ],
     "screenshots": [
         {
-            "src": "dcrg/screenshot.png",
+            "src": "screenshot.png",
             "sizes": "1280x1280",
             "type": "image/png",
             "form_factor": "wide",
-            "label": "Apps Hub"
+            "label": "Dashboard"
         },
         {
-            "src": "dcrg/screenshot.png",
+            "src": "screenshot.png",
             "sizes": "1280x1280",
             "type": "image/png",
             "form_factor": "narrow",
-            "label": "Apps Hub Mobile"
+            "label": "Mobile View"
         }
     ]
 }
