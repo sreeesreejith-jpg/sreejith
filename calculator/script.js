@@ -43,6 +43,22 @@ function appendOperator(op) {
     updateDisplay();
 }
 
+function applyPercentage() {
+    if (currentOperand === '0' || currentOperand === '') return;
+
+    const current = parseFloat(currentOperand);
+    const prev = parseFloat(previousOperand);
+
+    if (!isNaN(prev) && (operation === '+' || operation === '-')) {
+        // Smart Percentage: 100 + 10% becomes 100 + 10
+        currentOperand = (prev * (current / 100)).toString();
+    } else {
+        // Regular percentage: 100 * 10% becomes 100 * 0.1
+        currentOperand = (current / 100).toString();
+    }
+    updateDisplay();
+}
+
 function calculate() {
     let computation;
     const prev = parseFloat(previousOperand);
@@ -61,9 +77,6 @@ function calculate() {
             break;
         case '/':
             computation = prev / current;
-            break;
-        case '%':
-            computation = prev % current;
             break;
         default:
             return;
@@ -97,5 +110,6 @@ document.addEventListener('keydown', (e) => {
     if (e.key === '=' || e.key === 'Enter') calculate();
     if (e.key === 'Backspace') deleteLast();
     if (e.key === 'Escape') clearDisplay();
-    if (['+', '-', '*', '/', '%'].includes(e.key)) appendOperator(e.key);
+    if (['+', '-', '*', '/'].includes(e.key)) appendOperator(e.key);
+    if (e.key === '%') applyPercentage();
 });
