@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const daVal = document.getElementById('da-val');
     const daPendingVal = document.getElementById('da-pending-val');
     const hraVal = document.getElementById('hra-val');
-    const bpVal = document.getElementById('bp-val');
 
     // Deductions Inputs
     const gpfSub = document.getElementById('gpf-sub');
@@ -46,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const hra = bp * (hrP / 100);
 
         // Update earnings labels
-        bpVal.innerText = formatCurrency(bp);
         daVal.innerText = formatCurrency(da);
         daPendingVal.innerText = formatCurrency(dap);
         hraVal.innerText = formatCurrency(hra);
