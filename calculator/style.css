@@ -104,11 +104,38 @@ header {
 }
 
 .previous-op {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    min-height: 1rem;
+    min-height: 1.2rem;
     margin-bottom: 0.2rem;
     font-family: monospace;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    cursor: text;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1rem;
+    background-color: var(--primary);
+    animation: blink 1s step-end infinite;
+    margin-left: 1px;
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        background-color: var(--primary);
+    }
+
+    50% {
+        background-color: transparent;
+    }
 }
 
 .current-op {

@@ -1,15 +1,16 @@
-const CACHE_NAME = 'calc-v4'; // Bumped to v4 for UI responsiveness fix
+const CACHE_NAME = 'calc-v6'; // Bumped to v6
 const ASSETS = [
     './',
     './index.html',
-    './style.css',
-    './script.js',
+    './style.css?v=1.2',
+    './script.js?v=1.2',
     './manifest.json',
     '../icon-192.png',
     '../icon-512.png'
 ];
 
 self.addEventListener('install', (event) => {
+    self.skipWaiting(); // Force update
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
             return cache.addAll(ASSETS);
@@ -19,11 +20,16 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
     event.waitUntil(
-        caches.keys().then((keys) => {
-            return Promise.all(
-                keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
-            );
-        })
+        Promise.all([
+            // Claim clients immediately
+            self.clients.claim(),
+            // Delete old caches
+            caches.keys().then((keys) => {
+                return Promise.all(
+                    keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+                );
+            })
+        ])
     );
 });
 
