@@ -14,80 +14,38 @@
 
 /* Dashboard Section */
 .sticky-dashboard {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color: white;
-    padding: 10px 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
     max-width: 600px;
-    margin: 0 auto;
-    border-radius: 0 0 12px 12px;
+    margin: 0 auto 10px;
+    border-radius: 16px;
+}
+
+.main-content-padding {
+    padding-top: 10px;
 }
 
 @media (max-width: 480px) {
     .sticky-dashboard {
-        padding: 12px 10px;
-        position: fixed;
-        /* Keep it completely frozen */
-        top: 0;
-        left: 0;
-        right: 0;
-        border-radius: 0;
-        margin: 0;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    .sticky-dashboard .home-icon-container {
-        /* We might need to wrap the home icon */
-        font-size: 1.2rem;
-    }
-
-    /* Restore visibility of all items as requested */
-    .secondary-highlight,
-    .stats-grid,
-    .main-benefit .sub-label {
-        display: block !important;
-    }
-
-    .stats-grid.two-cols {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin-top: 10px;
+        padding: 15px 12px;
+        margin-bottom: 5px;
     }
 
     .main-benefit .value {
-        font-size: 1.5rem !important;
-        margin: 0 !important;
+        font-size: 1.6rem;
     }
 
     .main-benefit .label {
-        font-size: 0.65rem !important;
-        margin: 0 !important;
-        opacity: 0.8;
+        font-size: 0.65rem;
     }
 
-    .main-content-padding {
-        /* Increase padding significantly to push 'Service Details' below the frozen area */
-        padding-top: 250px !important;
-    }
-}
-
-/* Landscape/Short screen adjustment */
-@media (max-height: 500px) and (max-width: 480px) {
-    .main-content-padding {
-        padding-top: 220px !important;
-    }
-
-    .sticky-dashboard {
-        padding: 8px 10px;
-    }
-
-    .main-benefit .value {
-        font-size: 1.3rem !important;
+    /* Move inputs down significantly to reach the bottom area */
+    .card {
+        margin-top: 40px;
+        /* Shift the input card down */
     }
 }
 
