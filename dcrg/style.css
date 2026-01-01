@@ -29,11 +29,15 @@
 
 @media (max-width: 480px) {
     .sticky-dashboard {
-        padding: 5px 10px;
+        padding: 12px 10px;
         position: fixed;
-        /* Switch to fixed for more stability during keyboard popups */
+        /* Keep it completely frozen */
+        top: 0;
         left: 0;
         right: 0;
+        border-radius: 0;
+        margin: 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
 
     .sticky-dashboard .home-icon-container {
@@ -41,37 +45,49 @@
         font-size: 1.2rem;
     }
 
+    /* Restore visibility of all items as requested */
     .secondary-highlight,
     .stats-grid,
     .main-benefit .sub-label {
-        display: none !important;
+        display: block !important;
+    }
+
+    .stats-grid.two-cols {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
     }
 
     .main-benefit .value {
-        font-size: 1.35rem !important;
+        font-size: 1.5rem !important;
         margin: 0 !important;
     }
 
     .main-benefit .label {
-        font-size: 0.6rem !important;
+        font-size: 0.65rem !important;
         margin: 0 !important;
         opacity: 0.8;
     }
 
     .main-content-padding {
-        padding-top: 100px !important;
-        /* Enough space for the fixed header */
+        /* Increase padding significantly to push 'Service Details' below the frozen area */
+        padding-top: 250px !important;
     }
 }
 
-/* On extremely short viewports (like landscape with keyboard) */
-@media (max-height: 400px) and (max-width: 480px) {
+/* Landscape/Short screen adjustment */
+@media (max-height: 500px) and (max-width: 480px) {
     .main-content-padding {
-        padding-top: 60px !important;
+        padding-top: 220px !important;
     }
 
     .sticky-dashboard {
-        padding: 2px 10px;
+        padding: 8px 10px;
+    }
+
+    .main-benefit .value {
+        font-size: 1.3rem !important;
     }
 }
 
