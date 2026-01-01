@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // BP Fixed At: Rounded to next multiple of 100
         const bpFixed = Math.ceil(actualTotal / 100) * 100;
 
-        // User's sheet shows Bal DA and HRA are calculated on original BP
-        const balDaVal = Math.round(bp * (balDaPerc / 100));
-        const hraNewVal = Math.round(bp * (hraNewPerc / 100));
+        // Updated: Bal DA and HRA are calculated on BP Fixed At
+        const balDaVal = Math.round(bpFixed * (balDaPerc / 100));
+        const hraNewVal = Math.round(bpFixed * (hraNewPerc / 100));
         const grossNew = bpFixed + balDaVal + hraNewVal;
 
         const growth = grossNew - grossOld;
