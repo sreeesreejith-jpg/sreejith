@@ -4,106 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kerala Pension & DCRG Calculator</title>
-    <meta name="description"
-        content="Calculate Kerala Government Pension and DCRG with this easy-to-use, mobile-friendly calculator. Features instant results and accurate government formulas.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Sree-Apps Portal - Access all your finance and utility tools in one place">
+    <title>Sree-Apps | Portal</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2563eb">
-    <!-- Mobile App Meta Tags -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Pension Calc">
-    <link rel="apple-touch-icon" href="app-icon.png">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./service-worker.js')
-                    .then(reg => console.log('SW Registered'))
-                    .catch(err => console.log('SW Error', err));
+                navigator.serviceWorker.register('./service-worker.js');
             });
         }
     </script>
 </head>
 
 <body>
-    <div class="top-stats-container">
-        <div style="position: absolute; top: 10px; left: 10px; z-index: 100;">
-            <a href="../index.html" style="text-decoration: none; font-size: 1.5rem;">🏠</a>
-        </div>
-        <div class="stats-grid two-cols">
-            <div class="stat-item">
-                <span class="label">Commuted pension</span>
-                <span class="value" id="commuteHeader">0</span>
-            </div>
-            <div class="stat-item">
-                <span class="label">DCRG</span>
-                <span class="value" id="dcrgHeader">0</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="frozen-total-bar">
-        <div class="main-benefit">
-            <span class="value blinking" id="totalBenefitsHeader">0</span>
-            <span class="label">Total Pension Benefits (Lump Sum)</span>
-            <small class="sub-label">(Commutation + DCRG)</small>
-
-            <div class="secondary-highlight">
-                <span class="value highlight-blue blinking-blue" id="balanceHeader">0</span>
-                <span class="label">Balance Pension Next Month Onwards</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="container main-content-padding">
+    <div class="container">
+        <header>
+            <h1>Sree-Apps</h1>
+            <p class="subtitle">Quick Access Tools</p>
+        </header>
 
         <main>
-            <!-- Section 1: Inputs -->
-            <section class="card" id="input-section">
-                <div class="input-grid">
-                    <div class="input-group">
-                        <label for="basicPay">Basic Pay (BP)</label>
-                        <div class="input-wrapper">
-                            <input type="number" id="basicPay" min="0" step="100">
-                        </div>
-                    </div>
+            <span class="section-title">Service Matters</span>
+            <!-- Salary & Official Section -->
+            <div class="app-grid">
+                <!-- Salary Details -->
+                <a href="./salary/index.html" class="app-card">
+                    <div class="icon-wrapper">💵</div>
+                    <h2 class="app-title">Salary Details</h2>
+                </a>
 
-                    <div class="input-group">
-                        <label for="daPercentage">DA Percentage (DA%)</label>
-                        <div class="input-wrapper">
-                            <input type="number" id="daPercentage" min="0" step="1">
-                        </div>
-                    </div>
+                <!-- Pay Revision -->
+                <a href="./pay-revision/index.html" class="app-card">
+                    <div class="icon-wrapper">🔄</div>
+                    <h2 class="app-title">Pay Revision</h2>
+                </a>
 
-                    <div class="input-group full-width" style="display: none;">
-                        <label for="avgEmoluments">Average Emoluments</label>
-                        <div class="input-wrapper readonly">
-                            <input type="text" id="avgEmoluments" readonly>
-                        </div>
-                    </div>
+                <!-- Pension/DCRG -->
+                <a href="./dcrg/index.html" class="app-card">
+                    <div class="icon-wrapper">💰</div>
+                    <h2 class="app-title">Pension/DCRG</h2>
+                </a>
+            </div>
 
-                    <div class="input-group">
-                        <label for="serviceYears">Completed Years of Service</label>
-                        <div class="input-wrapper">
-                            <input type="number" id="serviceYears" min="10" max="35">
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <span class="section-title">Personal Finance</span>
 
+            <!-- Personal Finance Section -->
+            <div class="app-grid">
+                <!-- Housing Loan -->
+                <a href="./housing/index.html" class="app-card">
+                    <div class="icon-wrapper">🏠</div>
+                    <h2 class="app-title">Housing Loan</h2>
+                </a>
+
+                <!-- EMI Calc -->
+                <a href="./emi/index.html" class="app-card">
+                    <div class="icon-wrapper">📊</div>
+                    <h2 class="app-title">EMI Calc</h2>
+                </a>
+
+                <!-- SIP Calc -->
+                <a href="./sip/index.html" class="app-card">
+                    <div class="icon-wrapper">📈</div>
+                    <h2 class="app-title">SIP Calc</h2>
+                </a>
+
+                <!-- Calculator -->
+                <a href="./calculator/index.html" class="app-card">
+                    <div class="icon-wrapper">🔢</div>
+                    <h2 class="app-title">Calculator</h2>
+                </a>
+            </div>
         </main>
-
-
-        <p class="disclaimer">* Calculations are approximate</p>
-        <footer class="developer-credit">
-            Created by Sreejith
-        </footer>
     </div>
-    <script src="script.js"></script>
 </body>
 
 </html>

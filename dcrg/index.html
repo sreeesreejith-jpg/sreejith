@@ -30,19 +30,9 @@
 </head>
 
 <body>
-    <div class="sticky-dashboard">
+    <div class="top-stats-container">
         <div style="position: absolute; top: 10px; left: 10px; z-index: 100;">
             <a href="../index.html" style="text-decoration: none; font-size: 1.5rem;">🏠</a>
-        </div>
-        <div class="main-benefit">
-            <span class="value blinking" id="totalBenefitsHeader">0</span>
-            <span class="label">Total Pension Benefits (Lump Sum)</span>
-            <small class="sub-label">(Commutation + DCRG)</small>
-
-            <div class="secondary-highlight">
-                <span class="value highlight-blue blinking-blue" id="balanceHeader">0</span>
-                <span class="label">Balance Pension Next Month Onwards</span>
-            </div>
         </div>
         <div class="stats-grid two-cols">
             <div class="stat-item">
@@ -52,6 +42,19 @@
             <div class="stat-item">
                 <span class="label">DCRG</span>
                 <span class="value" id="dcrgHeader">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="frozen-total-bar">
+        <div class="main-benefit">
+            <span class="value blinking" id="totalBenefitsHeader">0</span>
+            <span class="label">Total Pension Benefits (Lump Sum)</span>
+            <small class="sub-label">(Commutation + DCRG)</small>
+
+            <div class="secondary-highlight">
+                <span class="value highlight-blue blinking-blue" id="balanceHeader">0</span>
+                <span class="label">Balance Pension Next Month Onwards</span>
             </div>
         </div>
     </div>
