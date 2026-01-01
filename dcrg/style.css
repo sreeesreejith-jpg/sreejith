@@ -14,24 +14,17 @@
 
 /* Dashboard Section */
 .sticky-dashboard {
-    position: relative;
-    z-index: 10;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color: white;
-    padding: 20px 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 15px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     text-align: center;
     max-width: 600px;
     margin: 0 auto 20px;
-    border-radius: 16px;
-}
-
-.main-benefit .label {
-    font-size: 0.7rem;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: block;
+    border-radius: 0 0 16px 16px;
 }
 
 .main-benefit .value {
@@ -40,7 +33,16 @@
     color: #ef4444;
     /* Initial Red */
     display: block;
-    margin: 2px 0;
+    margin-bottom: 2px;
+}
+
+.main-benefit .label {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 4px;
 }
 
 .main-benefit .sub-label {
