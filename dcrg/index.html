@@ -35,8 +35,8 @@
             <a href="../index.html" style="text-decoration: none; font-size: 1.5rem;">🏠</a>
         </div>
         <div class="main-benefit">
-            <span class="value blinking" id="totalBenefitsHeader">0</span>
             <span class="label">Total Pension Benefits (Lump Sum)</span>
+            <span class="value blinking" id="totalBenefitsHeader">0</span>
             <small class="sub-label">(Commutation + DCRG)</small>
 
             <div class="secondary-highlight">
@@ -55,12 +55,11 @@
             </div>
         </div>
     </div>
-
     <div class="container main-content-padding">
-
         <main>
             <!-- Section 1: Inputs -->
             <section class="card" id="input-section">
+                <h2>Service Details</h2>
                 <div class="input-grid">
                     <div class="input-group">
                         <label for="basicPay">Basic Pay (BP)</label>
@@ -68,21 +67,18 @@
                             <input type="number" id="basicPay" min="0" step="100">
                         </div>
                     </div>
-
                     <div class="input-group">
                         <label for="daPercentage">DA Percentage (DA%)</label>
                         <div class="input-wrapper">
                             <input type="number" id="daPercentage" min="0" step="1">
                         </div>
                     </div>
-
                     <div class="input-group full-width" style="display: none;">
                         <label for="avgEmoluments">Average Emoluments</label>
                         <div class="input-wrapper readonly">
                             <input type="text" id="avgEmoluments" readonly>
                         </div>
                     </div>
-
                     <div class="input-group">
                         <label for="serviceYears">Completed Years of Service</label>
                         <div class="input-wrapper">
@@ -91,10 +87,7 @@
                     </div>
                 </div>
             </section>
-
         </main>
-
-
         <p class="disclaimer">* Calculations are approximate</p>
         <footer class="developer-credit">
             Created by Sreejith
