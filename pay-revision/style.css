@@ -424,3 +424,24 @@ footer {
         font-size: 0.78rem;
     }
 }
+/* FORCE INPUT VISIBILITY FIX */
+input, select, textarea {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    caret-color: white !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    background-color: #334155 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Chrome/Android Autofill Fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1e293b inset !important;
+    -webkit-text-fill-color: white !important;
+}

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pay-rev-v2';
+const CACHE_NAME = 'pay-rev-v3';
 const ASSETS = [
     'index.html',
     'style.css',

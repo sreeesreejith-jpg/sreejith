@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pension-calc-v4';
+const CACHE_NAME = 'pension-calc-v5';
 const ASSETS = [
     './',
     './index.html',

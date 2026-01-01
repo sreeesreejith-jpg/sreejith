@@ -1,4 +1,4 @@
-const CACHE_NAME = 'calc-v6'; // Bumped to v6
+const CACHE_NAME = 'calc-v7'; // Bumped to v6
 const ASSETS = [
     './',
     './index.html',

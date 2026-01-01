@@ -1,4 +1,4 @@
-const CACHE_NAME = 'housing-emi-v1';
+const CACHE_NAME = 'housing-emi-v2';
 const urlsToCache = [
     './',
     './index.html',

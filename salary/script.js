@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const daPerc = document.getElementById('da-perc');
     const daPendingPerc = document.getElementById('da-pending-perc');
     const hraPerc = document.getElementById('hra-perc');
+    const otherEarnings = document.getElementById('other-earnings');
 
     // Earnings Calculated Displays
     const daVal = document.getElementById('da-val');
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sli = document.getElementById('sli');
     const medisep = document.getElementById('medisep');
     const sliLoan = document.getElementById('sli-loan');
+    const otherDeductions = document.getElementById('other-deductions');
 
 
     // Final Summary Displays
@@ -38,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const daP = parseFloat(daPerc.value) || 0;
         const dapP = parseFloat(daPendingPerc.value) || 0;
         const hrP = parseFloat(hraPerc.value) || 0;
+        const otherEarn = parseFloat(otherEarnings.value) || 0;
 
         // Calculate individual earnings
         const da = bp * (daP / 100);
@@ -50,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hraVal.innerText = formatCurrency(hra);
 
         // Gross Salary
-        const gross = bp + da + dap + hra;
+        const gross = bp + da + dap + hra + otherEarn;
         grossValDisplay.innerText = formatCurrency(gross);
 
         // Deductions
@@ -59,9 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const d3 = parseFloat(sli.value) || 0;
         const d4 = parseFloat(medisep.value) || 0;
         const d5 = parseFloat(sliLoan.value) || 0;
+        const d6 = parseFloat(otherDeductions.value) || 0;
 
 
-        const totalDeductions = d1 + d2 + d3 + d4 + d5;
+        const totalDeductions = d1 + d2 + d3 + d4 + d5 + d6;
         totalDeductDisplay.innerText = formatCurrency(totalDeductions);
 
         // Net Salary
