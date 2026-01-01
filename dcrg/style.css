@@ -13,48 +13,25 @@
 }
 
 /* Dashboard Section */
-.top-stats-container {
-    background: var(--card-bg);
-    color: white;
-    padding: 15px 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 632px;
-    margin: 0 auto;
-    border-radius: 16px 16px 0 0;
-    position: relative;
-}
-
-.frozen-total-bar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.sticky-dashboard {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     color: white;
-    padding: 12px 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    padding: 20px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    max-width: 632px;
-    margin: 0 auto 20px;
-    border-radius: 0 0 16px 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+    margin: 0 auto 10px;
+    border-radius: 16px;
 }
 
 .main-content-padding {
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 @media (max-width: 480px) {
-    .top-stats-container {
-        padding: 12px;
-        border-radius: 0;
-    }
-
-    .frozen-total-bar {
-        padding: 8px 12px;
-        border-radius: 0 0 16px 16px;
-        margin-bottom: 30vh;
-        /* Shoves the input card way down */
+    .sticky-dashboard {
+        padding: 15px 12px;
+        margin-bottom: 5px;
     }
 
     .main-benefit .value {
@@ -63,6 +40,12 @@
 
     .main-benefit .label {
         font-size: 0.65rem;
+    }
+
+    /* Move inputs down significantly to reach the bottom area */
+    .card {
+        margin-top: 40px;
+        /* Shift the input card down */
     }
 }
 
