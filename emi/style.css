@@ -513,3 +513,27 @@ tr:last-child td {
         font-size: 0.8rem;
     }
 }
+
+.disclaimer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #ef4444;
+    /* Red color */
+    margin-top: 1.5rem;
+    font-weight: 600;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

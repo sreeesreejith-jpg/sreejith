@@ -165,10 +165,34 @@ header {
     font-size: 1.1rem;
 }
 
+.disclaimer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #ef4444;
+    /* Red color */
+    margin-top: 1.5rem;
+    font-weight: 600;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 footer {
     text-align: center;
-    margin-top: auto;
-    padding-top: 2rem;
-    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
 }

@@ -453,13 +453,36 @@ header p {
     color: #64748b;
 }
 
-footer.developer-credit {
-    text-align: right;
-    padding: 20px 0 40px;
+.disclaimer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #ef4444;
+    /* Red color */
+    margin-top: 1.5rem;
+    font-weight: 600;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.developer-credit {
+    text-align: center;
+    padding: 10px 0 20px;
     color: var(--text-muted);
     font-size: 0.8rem;
     font-style: italic;
-    font-weight: 500;
 }
 
 /* Animations */

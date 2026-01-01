@@ -192,6 +192,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 @media (max-width: 480px) {
@@ -200,10 +201,11 @@ input[type=number] {
     }
 
     .mini-header {
-        display: block; /* Show header on mobile now that it has navigation */
+        display: block;
+        /* Show header on mobile now that it has navigation */
         margin-bottom: 0.5rem;
     }
-    
+
     .mini-header h1 {
         font-size: 1.1rem;
     }
@@ -214,8 +216,10 @@ input[type=number] {
     }
 
     .card.compact-card {
-        padding: 0; /* Remove internal padding, move to children to handle sticky */
-        overflow: hidden; /* Ensure border radius clips content */
+        padding: 0;
+        /* Remove internal padding, move to children to handle sticky */
+        overflow: hidden;
+        /* Ensure border radius clips content */
     }
 
     .top-result {
@@ -233,9 +237,12 @@ input[type=number] {
     }
 
     .compact-grid {
-        padding: 1rem; /* Restore padding for inputs */
-        grid-template-columns: 1fr 1fr; /* Try 2 columns for smaller inputs? */
-        gap: 0.75rem 0.5rem; /* Gap between rows and columns */
+        padding: 1rem;
+        /* Restore padding for inputs */
+        grid-template-columns: 1fr 1fr;
+        /* Try 2 columns for smaller inputs? */
+        gap: 0.75rem 0.5rem;
+        /* Gap between rows and columns */
     }
 
     /* Make text inputs span full width, but number inputs can be 2-col */
@@ -245,7 +252,7 @@ input[type=number] {
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
     }
-    
+
     .input-section-compact h3 {
         grid-column: span 2;
         margin-top: 0.5rem;
@@ -262,7 +269,39 @@ input[type=number] {
         margin-top: 0;
         background: var(--bg-dark);
     }
-    
+
     /* Specific overrides for Full Width inputs if needed */
     /* Net Salary & Rent might need full width? Let's check visually */
+}
+
+.disclaimer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #ef4444;
+    /* Red color */
+    margin-top: 1.5rem;
+    font-weight: 600;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
 }
