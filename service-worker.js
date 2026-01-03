@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sree-apps-hub-v6'; // Bumped to v5
+const CACHE_NAME = 'sree-apps-hub-v9'; // Bumped to v9
 const ASSETS = [
     './',
     './index.html',

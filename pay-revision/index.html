@@ -54,43 +54,6 @@
         </div>
 
         <main class="revision-grid">
-            <!-- Before Section -->
-            <section class="revision-section before">
-                <div class="section-header before-header">
-                    <h2>Before Pay Revision</h2>
-                </div>
-                <div class="input-group">
-                    <div class="result-row">
-                        <span class="label">Basic Pay</span>
-                        <span id="res-bp-old" class="value">60700</span>
-                    </div>
-                    <div class="result-row">
-                        <span class="label">DA 22%</span>
-                        <span id="res-da-old" class="value">0</span>
-                    </div>
-                    <div class="input-field row-input">
-                        <label>DA Pending</label>
-                        <div class="input-with-val">
-                            <input type="number" id="da-pend-perc" value="15" step="1">
-                            <span class="unit">%</span>
-                        </div>
-                        <span id="res-da-pend" class="calc-val">0</span>
-                    </div>
-                    <div class="input-field row-input">
-                        <label>HRA</label>
-                        <div class="input-with-val">
-                            <input type="number" id="hra-old-perc" value="4" step="0.5">
-                            <span class="unit">%</span>
-                        </div>
-                        <span id="res-hra-old" class="calc-val">0</span>
-                    </div>
-                </div>
-                <div class="section-footer">
-                    <span class="label">Old Gross</span>
-                    <span id="res-gross-old" class="total-val">0</span>
-                </div>
-            </section>
-
             <!-- After Section -->
             <section class="revision-section after">
                 <div class="section-header after-header">
@@ -141,6 +104,43 @@
                 <div class="section-footer">
                     <span class="label">New Gross</span>
                     <span id="res-gross-new" class="total-val">0</span>
+                </div>
+            </section>
+
+            <!-- Before Section -->
+            <section class="revision-section before">
+                <div class="section-header before-header">
+                    <h2>Before Pay Revision</h2>
+                </div>
+                <div class="input-group">
+                    <div class="result-row">
+                        <span class="label">Basic Pay</span>
+                        <span id="res-bp-old" class="value">60700</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="label">DA 22%</span>
+                        <span id="res-da-old" class="value">0</span>
+                    </div>
+                    <div class="input-field row-input">
+                        <label>DA Pending</label>
+                        <div class="input-with-val">
+                            <input type="number" id="da-pend-perc" value="15" step="1">
+                            <span class="unit">%</span>
+                        </div>
+                        <span id="res-da-pend" class="calc-val">0</span>
+                    </div>
+                    <div class="input-field row-input">
+                        <label>HRA</label>
+                        <div class="input-with-val">
+                            <input type="number" id="hra-old-perc" value="4" step="0.5">
+                            <span class="unit">%</span>
+                        </div>
+                        <span id="res-hra-old" class="calc-val">0</span>
+                    </div>
+                </div>
+                <div class="section-footer">
+                    <span class="label">Old Gross</span>
+                    <span id="res-gross-old" class="total-val">0</span>
                 </div>
             </section>
         </main>
